@@ -1,0 +1,991 @@
+{
+  "tool": "curl, ping, and UDP against the userspace stack on a TAP",
+  "impairment": "TAP device delay and loss; sch_netem is not in this kernel",
+  "tc_netem_available": false,
+  "tc_netem_error": "Error: Specified qdisc kind is unknown.",
+  "topology": "kernel 10.0.0.1/24 on nstk0, stack 10.0.0.2",
+  "repeats_baseline": 5,
+  "baseline_mbit_median": 79.099752,
+  "baseline_runs": [
+    {
+      "cc": "reno",
+      "bytes": 1048576,
+      "delay_ms": 0,
+      "loss_pct": 0,
+      "drop_seg": null,
+      "shaping": null,
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.01415,
+        "bytes_per_sec": 212.0,
+        "mbit_per_sec": 0.001696,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 814ms\nrtt min/avg/max/mdev = 0.092/0.234/0.361/0.109 ms",
+        "stats": {
+          "min_ms": 0.092,
+          "avg_ms": 0.234,
+          "max_ms": 0.361,
+          "mdev_ms": 0.109
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 1048576,
+        "seconds": 0.106051,
+        "bytes_per_sec": 9887469.0,
+        "mbit_per_sec": 79.099752,
+        "url": "http://10.0.0.2/download?n=1048576"
+      },
+      "fragmented_ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 2000(2028) bytes of data.\n2008 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.325 ms\n\n--- 10.0.0.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.325/0.325/0.325/0.000 ms"
+      },
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 1048826,
+        "best_burst_bytes": 1048702,
+        "transfer_s": 0.088136449,
+        "goodput_mbps": 95.18894958,
+        "tx_tcp": 728,
+        "rx_tcp": 581,
+        "retx": 0,
+        "fast_retx": 0,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 1,
+        "losses": []
+      },
+      "impair_drops": 0
+    },
+    {
+      "cc": "reno",
+      "bytes": 1048576,
+      "delay_ms": 0,
+      "loss_pct": 0,
+      "drop_seg": null,
+      "shaping": null,
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.014565,
+        "bytes_per_sec": 205.0,
+        "mbit_per_sec": 0.00164,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 816ms\nrtt min/avg/max/mdev = 0.092/0.144/0.249/0.059 ms",
+        "stats": {
+          "min_ms": 0.092,
+          "avg_ms": 0.144,
+          "max_ms": 0.249,
+          "mdev_ms": 0.059
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 1048576,
+        "seconds": 0.106952,
+        "bytes_per_sec": 9804173.0,
+        "mbit_per_sec": 78.433384,
+        "url": "http://10.0.0.2/download?n=1048576"
+      },
+      "fragmented_ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 2000(2028) bytes of data.\n2008 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.161 ms\n\n--- 10.0.0.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.161/0.161/0.161/0.000 ms"
+      },
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 1048826,
+        "best_burst_bytes": 1048702,
+        "transfer_s": 0.08785365,
+        "goodput_mbps": 95.49536075,
+        "tx_tcp": 728,
+        "rx_tcp": 590,
+        "retx": 0,
+        "fast_retx": 0,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 1,
+        "losses": []
+      },
+      "impair_drops": 0
+    },
+    {
+      "cc": "reno",
+      "bytes": 1048576,
+      "delay_ms": 0,
+      "loss_pct": 0,
+      "drop_seg": null,
+      "shaping": null,
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.015799,
+        "bytes_per_sec": 189.0,
+        "mbit_per_sec": 0.001512,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 815ms\nrtt min/avg/max/mdev = 0.077/0.149/0.260/0.077 ms",
+        "stats": {
+          "min_ms": 0.077,
+          "avg_ms": 0.149,
+          "max_ms": 0.26,
+          "mdev_ms": 0.077
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 1048576,
+        "seconds": 0.105317,
+        "bytes_per_sec": 9956379.0,
+        "mbit_per_sec": 79.651032,
+        "url": "http://10.0.0.2/download?n=1048576"
+      },
+      "fragmented_ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 2000(2028) bytes of data.\n2008 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.250 ms\n\n--- 10.0.0.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.250/0.250/0.250/0.000 ms"
+      },
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 1048826,
+        "best_burst_bytes": 1048702,
+        "transfer_s": 0.086454304,
+        "goodput_mbps": 97.04104494,
+        "tx_tcp": 728,
+        "rx_tcp": 579,
+        "retx": 0,
+        "fast_retx": 0,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 1,
+        "losses": []
+      },
+      "impair_drops": 0
+    },
+    {
+      "cc": "reno",
+      "bytes": 1048576,
+      "delay_ms": 0,
+      "loss_pct": 0,
+      "drop_seg": null,
+      "shaping": null,
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.013953,
+        "bytes_per_sec": 215.0,
+        "mbit_per_sec": 0.00172,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 814ms\nrtt min/avg/max/mdev = 0.186/0.233/0.260/0.029 ms",
+        "stats": {
+          "min_ms": 0.186,
+          "avg_ms": 0.233,
+          "max_ms": 0.26,
+          "mdev_ms": 0.029
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 1048576,
+        "seconds": 0.104796,
+        "bytes_per_sec": 10005878.0,
+        "mbit_per_sec": 80.047024,
+        "url": "http://10.0.0.2/download?n=1048576"
+      },
+      "fragmented_ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 2000(2028) bytes of data.\n2008 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.147 ms\n\n--- 10.0.0.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.147/0.147/0.147/0.000 ms"
+      },
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 1048826,
+        "best_burst_bytes": 1048702,
+        "transfer_s": 0.08673656,
+        "goodput_mbps": 96.72525634,
+        "tx_tcp": 728,
+        "rx_tcp": 580,
+        "retx": 0,
+        "fast_retx": 0,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 1,
+        "losses": []
+      },
+      "impair_drops": 0
+    },
+    {
+      "cc": "reno",
+      "bytes": 1048576,
+      "delay_ms": 0,
+      "loss_pct": 0,
+      "drop_seg": null,
+      "shaping": null,
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.012889,
+        "bytes_per_sec": 232.0,
+        "mbit_per_sec": 0.001856,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 813ms\nrtt min/avg/max/mdev = 0.067/0.147/0.245/0.067 ms",
+        "stats": {
+          "min_ms": 0.067,
+          "avg_ms": 0.147,
+          "max_ms": 0.245,
+          "mdev_ms": 0.067
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 1048576,
+        "seconds": 0.106985,
+        "bytes_per_sec": 9801149.0,
+        "mbit_per_sec": 78.409192,
+        "url": "http://10.0.0.2/download?n=1048576"
+      },
+      "fragmented_ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 2000(2028) bytes of data.\n2008 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.161 ms\n\n--- 10.0.0.2 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.161/0.161/0.161/0.000 ms"
+      },
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 1048826,
+        "best_burst_bytes": 1048702,
+        "transfer_s": 0.08813898,
+        "goodput_mbps": 95.18621613,
+        "tx_tcp": 728,
+        "rx_tcp": 582,
+        "retx": 0,
+        "fast_retx": 0,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 1,
+        "losses": []
+      },
+      "impair_drops": 0
+    }
+  ],
+  "impaired_runs": [
+    {
+      "cc": "reno",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.094749,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 802ms\nrtt min/avg/max/mdev = 40.109/40.260/40.475/0.121 ms",
+        "stats": {
+          "min_ms": 40.109,
+          "avg_ms": 40.26,
+          "max_ms": 40.475,
+          "mdev_ms": 0.121
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.778554,
+        "bytes_per_sec": 673412.0,
+        "mbit_per_sec": 5.387296,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.721503622,
+        "goodput_mbps": 5.814667968,
+        "tx_tcp": 375,
+        "rx_tcp": 362,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402809,
+            "cwnd_before": 43800,
+            "rexmit_ack_us": 40038,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          }
+        ]
+      },
+      "impair_drops": 3
+    },
+    {
+      "cc": "reno",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.092683,
+        "bytes_per_sec": 32.0,
+        "mbit_per_sec": 0.000256,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 802ms\nrtt min/avg/max/mdev = 40.054/40.206/40.320/0.097 ms",
+        "stats": {
+          "min_ms": 40.054,
+          "avg_ms": 40.206,
+          "max_ms": 40.32,
+          "mdev_ms": 0.097
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.738292,
+        "bytes_per_sec": 710136.0,
+        "mbit_per_sec": 5.681088,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.681464955,
+        "goodput_mbps": 6.156301904,
+        "tx_tcp": 368,
+        "rx_tcp": 357,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402366,
+            "cwnd_before": 45260,
+            "rexmit_ack_us": 40050,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          }
+        ]
+      },
+      "impair_drops": 3
+    },
+    {
+      "cc": "reno",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.094705,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 802ms\nrtt min/avg/max/mdev = 40.051/40.151/40.272/0.094 ms",
+        "stats": {
+          "min_ms": 40.051,
+          "avg_ms": 40.151,
+          "max_ms": 40.272,
+          "mdev_ms": 0.094
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.778512,
+        "bytes_per_sec": 673448.0,
+        "mbit_per_sec": 5.387584,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.72095622,
+        "goodput_mbps": 5.819082884,
+        "tx_tcp": 375,
+        "rx_tcp": 371,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402457,
+            "cwnd_before": 43800,
+            "rexmit_ack_us": 40047,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          }
+        ]
+      },
+      "impair_drops": 3
+    },
+    {
+      "cc": "cubic",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.094272,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 802ms\nrtt min/avg/max/mdev = 40.088/40.206/40.275/0.063 ms",
+        "stats": {
+          "min_ms": 40.088,
+          "avg_ms": 40.206,
+          "max_ms": 40.275,
+          "mdev_ms": 0.063
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.739107,
+        "bytes_per_sec": 709353.0,
+        "mbit_per_sec": 5.674824,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "cubic",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.681902336,
+        "goodput_mbps": 6.152353172,
+        "tx_tcp": 373,
+        "rx_tcp": 332,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402865,
+            "cwnd_before": 39420,
+            "rexmit_ack_us": 40118,
+            "restored_us": 601382,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": true
+          }
+        ]
+      },
+      "impair_drops": 3
+    },
+    {
+      "cc": "cubic",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.093916,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 801ms\nrtt min/avg/max/mdev = 40.075/40.156/40.247/0.071 ms",
+        "stats": {
+          "min_ms": 40.075,
+          "avg_ms": 40.156,
+          "max_ms": 40.247,
+          "mdev_ms": 0.071
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.698185,
+        "bytes_per_sec": 750929.0,
+        "mbit_per_sec": 6.007432,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "cubic",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.641104795,
+        "goodput_mbps": 6.543866202,
+        "tx_tcp": 384,
+        "rx_tcp": 377,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402706,
+            "cwnd_before": 43800,
+            "rexmit_ack_us": 40076,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          }
+        ]
+      },
+      "impair_drops": 4
+    },
+    {
+      "cc": "cubic",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 1,
+      "drop_seg": null,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.01,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.092758,
+        "bytes_per_sec": 32.0,
+        "mbit_per_sec": 0.000256,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 803ms\nrtt min/avg/max/mdev = 40.190/40.302/40.432/0.088 ms",
+        "stats": {
+          "min_ms": 40.19,
+          "avg_ms": 40.302,
+          "max_ms": 40.432,
+          "mdev_ms": 0.088
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.698382,
+        "bytes_per_sec": 750718.0,
+        "mbit_per_sec": 6.005744,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "cubic",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.641292824,
+        "goodput_mbps": 6.541947521,
+        "tx_tcp": 374,
+        "rx_tcp": 369,
+        "retx": 3,
+        "fast_retx": 2,
+        "timeouts": 0,
+        "debug_drops": 0,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1402302,
+            "cwnd_before": 43800,
+            "rexmit_ack_us": 40106,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          },
+          {
+            "t_us": 1883023,
+            "cwnd_before": 40442,
+            "rexmit_ack_us": 40058,
+            "restored_us": 0,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": false
+          }
+        ]
+      },
+      "impair_drops": 3
+    },
+    {
+      "cc": "reno",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 0,
+      "drop_seg": 4,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.0,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.094851,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 803ms\nrtt min/avg/max/mdev = 40.200/40.248/40.340/0.047 ms",
+        "stats": {
+          "min_ms": 40.2,
+          "avg_ms": 40.248,
+          "max_ms": 40.34,
+          "mdev_ms": 0.047
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.979353,
+        "bytes_per_sec": 535341.0,
+        "mbit_per_sec": 4.282728,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "reno",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.922144189,
+        "goodput_mbps": 4.549509773,
+        "tx_tcp": 377,
+        "rx_tcp": 354,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 1,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1362836,
+            "cwnd_before": 20440,
+            "rexmit_ack_us": 40047,
+            "restored_us": 321106,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": true
+          }
+        ]
+      },
+      "impair_drops": 0
+    },
+    {
+      "cc": "cubic",
+      "bytes": 524288,
+      "delay_ms": 20,
+      "loss_pct": 0,
+      "drop_seg": 4,
+      "shaping": {
+        "mode": "device",
+        "delay_ms": 20,
+        "loss_prob": 0.0,
+        "tc_error": "Error: Specified qdisc kind is unknown.",
+        "reason": "tc netem is unavailable (CONFIG_NET_SCH_NETEM is not set on this kernel). Frames were delayed and dropped in the TAP device instead. ARP is not impaired."
+      },
+      "health": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 3,
+        "seconds": 0.094222,
+        "bytes_per_sec": 31.0,
+        "mbit_per_sec": 0.000248,
+        "url": "http://10.0.0.2/health"
+      },
+      "ping": {
+        "ok": true,
+        "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 802ms\nrtt min/avg/max/mdev = 40.097/40.159/40.230/0.057 ms",
+        "stats": {
+          "min_ms": 40.097,
+          "avg_ms": 40.159,
+          "max_ms": 40.23,
+          "mdev_ms": 0.057
+        }
+      },
+      "udp_echo": {
+        "ok": true,
+        "payload": "netstack-udp",
+        "from": "10.0.0.2"
+      },
+      "curl": {
+        "ok": true,
+        "http_code": 200,
+        "bytes": 524288,
+        "seconds": 0.940216,
+        "bytes_per_sec": 557625.0,
+        "mbit_per_sec": 4.461,
+        "url": "http://10.0.0.2/download?n=524288"
+      },
+      "fragmented_ping": null,
+      "stack": {
+        "cc": "cubic",
+        "payload_acked": 524537,
+        "best_burst_bytes": 524413,
+        "transfer_s": 0.882655227,
+        "goodput_mbps": 4.753049517,
+        "tx_tcp": 377,
+        "rx_tcp": 356,
+        "retx": 1,
+        "fast_retx": 1,
+        "timeouts": 0,
+        "debug_drops": 1,
+        "checksum_drops": 0,
+        "frag_reassembled": 0,
+        "losses": [
+          {
+            "t_us": 1362641,
+            "cwnd_before": 20440,
+            "rexmit_ack_us": 40093,
+            "restored_us": 280836,
+            "fast": true,
+            "got_rexmit_ack": true,
+            "restored": true
+          }
+        ]
+      },
+      "impair_drops": 0
+    }
+  ],
+  "page": {
+    "cc": "reno",
+    "bytes": 0,
+    "delay_ms": 0,
+    "loss_pct": 0,
+    "drop_seg": null,
+    "shaping": null,
+    "health": {
+      "ok": true,
+      "http_code": 200,
+      "bytes": 3,
+      "seconds": 0.014305,
+      "bytes_per_sec": 209.0,
+      "mbit_per_sec": 0.001672,
+      "url": "http://10.0.0.2/health"
+    },
+    "ping": {
+      "ok": true,
+      "raw": "PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.\n\n--- 10.0.0.2 ping statistics ---\n5 packets transmitted, 5 received, 0% packet loss, time 813ms\nrtt min/avg/max/mdev = 0.066/0.191/0.345/0.095 ms",
+      "stats": {
+        "min_ms": 0.066,
+        "avg_ms": 0.191,
+        "max_ms": 0.345,
+        "mdev_ms": 0.095
+      }
+    },
+    "udp_echo": {
+      "ok": true,
+      "payload": "netstack-udp",
+      "from": "10.0.0.2"
+    },
+    "curl": {
+      "ok": true,
+      "http_code": 200,
+      "bytes": 3,
+      "seconds": 0.015327,
+      "bytes_per_sec": 195.0,
+      "mbit_per_sec": 0.00156,
+      "url": "http://10.0.0.2/health"
+    },
+    "fragmented_ping": null,
+    "stack": {
+      "cc": "reno",
+      "payload_acked": 248,
+      "best_burst_bytes": 124,
+      "transfer_s": 1.8607e-05,
+      "goodput_mbps": 53.3132692,
+      "tx_tcp": 8,
+      "rx_tcp": 12,
+      "retx": 0,
+      "fast_retx": 0,
+      "timeouts": 0,
+      "debug_drops": 0,
+      "checksum_drops": 0,
+      "frag_reassembled": 0,
+      "losses": []
+    },
+    "impair_drops": 0
+  }
+}

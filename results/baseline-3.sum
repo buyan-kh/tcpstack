@@ -1,0 +1,1 @@
+{"cc":"reno","payload_acked":1048826,"best_burst_bytes":1048702,"transfer_s":0.08673656,"goodput_mbps":96.72525634,"tx_tcp":728,"rx_tcp":580,"retx":0,"fast_retx":0,"timeouts":0,"debug_drops":0,"checksum_drops":0,"frag_reassembled":1,"losses":[]}

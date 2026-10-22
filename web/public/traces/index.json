@@ -1,0 +1,40 @@
+{
+  "traces": [
+    {
+      "id": "http",
+      "file": "http.json",
+      "title": "GET /health, idle TAP",
+      "blurb": "Two short HTTP/1.1 exchanges on an idle TAP. Handshake, 124 bytes of response, FIN. No delay and no loss."
+    },
+    {
+      "id": "baseline",
+      "file": "baseline.json",
+      "title": "1 MiB download, Reno",
+      "blurb": "curl GET /download?n=1048576 against Reno on an idle TAP. The window climbs in slow start and the transfer is not cut by loss."
+    },
+    {
+      "id": "drop-reno",
+      "file": "drop-reno.json",
+      "title": "One drop, Reno",
+      "blurb": "512 KiB download. 20 ms delay each way on the TAP device. Data segment 4 is dropped once. Recovery is fast retransmit, not a timeout."
+    },
+    {
+      "id": "drop-cubic",
+      "file": "drop-cubic.json",
+      "title": "One drop, CUBIC",
+      "blurb": "Same forced drop and 20 ms each-way delay, with CUBIC as the congestion-avoidance increase."
+    },
+    {
+      "id": "loss-reno",
+      "file": "netem-reno-0.json",
+      "title": "1% loss, Reno",
+      "blurb": "512 KiB download. 20 ms each-way delay and 1% random loss of non-ARP frames, Reno."
+    },
+    {
+      "id": "loss-cubic",
+      "file": "netem-cubic-0.json",
+      "title": "1% loss, CUBIC",
+      "blurb": "512 KiB download. 20 ms each-way delay and 1% random loss of non-ARP frames, CUBIC."
+    }
+  ]
+}

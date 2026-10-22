@@ -122,4 +122,3 @@ On Vercel, set the project root directory to `web`. No environment variables are
 | `results/` | recorded numbers, pcap, JSON traces |
 | `web/` | trace viewer |
 | `docs/WALKTHROUGH.md` | decisions worth defending |
-| `docs/RESUME.md` | three resume bullets taken from the table above |

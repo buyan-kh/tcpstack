@@ -1,0 +1,12 @@
+build/
+cmake-build-*/
+compile_commands.json
+web/node_modules/
+web/.next/
+web/out/
+*.o
+*.a
+.cache/
+.DS_Store
+results/tmp/
+*.pcapng

@@ -1,0 +1,1 @@
+{"cc":"reno","payload_acked":524537,"best_burst_bytes":524413,"transfer_s":0.922144189,"goodput_mbps":4.549509773,"tx_tcp":377,"rx_tcp":354,"retx":1,"fast_retx":1,"timeouts":0,"debug_drops":1,"checksum_drops":0,"frag_reassembled":0,"losses":[{"t_us":1362836,"cwnd_before":20440,"rexmit_ack_us":40047,"restored_us":321106,"fast":true,"got_rexmit_ack":true,"restored":true}]}
